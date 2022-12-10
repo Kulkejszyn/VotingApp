@@ -1,0 +1,16 @@
+.two-columns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1em;
+
+  .column{
+    flex: 1;
+    aspect-ratio: 1.618;
+
+    &-content{
+      overflow-y: scroll;
+      height: 100%;
+    }
+  }
+}

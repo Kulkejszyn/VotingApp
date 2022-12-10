@@ -1,0 +1,22 @@
+<app-voting-results></app-voting-results>
+
+<div [formGroup]="voteForm">
+  <mat-form-field>
+    <mat-label>I am</mat-label>
+    <mat-select formControlName="voter">
+      <mat-option *ngFor="let user of users$ | async" [value]="user">
+        {{user.name}} {{user.surname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>I vote for</mat-label>
+    <mat-select formControlName="candidate">
+      <mat-option *ngFor="let user of users$ | async" [value]="user">
+        {{user.name}} {{user.surname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button (click)="vote()" mat-raised-button>Vote!</button>
+</div>
